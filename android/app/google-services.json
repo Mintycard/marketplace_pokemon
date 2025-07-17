@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "311379764419",
+    "project_id": "mintycard-97j73q",
+    "storage_bucket": "mintycard-97j73q.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311379764419:android:ca52fb3ec682dfda906e76",
+        "android_client_info": {
+          "package_name": "com.mintycard.marketplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE-RdwiShUvaFwufve684-0ET_QBbWzqk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

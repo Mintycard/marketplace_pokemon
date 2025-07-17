@@ -1,55 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'auth_service.dart';
+import 'login_screen.dart';
 
-void main() {
-  runApp(const MarketplaceApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
-class MarketplaceApp extends StatelessWidget {
-  const MarketplaceApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      title: 'Marketplace Pokémon',
+    return MaterialApp(
+      title: 'Mintycard',
       theme: ThemeData(primarySwatch: Colors.blue),
-      routerConfig: _router,
-    );
-  }
-}
-
-final GoRouter _router = GoRouter(
-  initialLocation: '/',
-  routes: [
-    GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
-    GoRoute(
-      path: '/scanner',
-      builder: (context, state) => const ScannerScreen(),
-    ),
-  ],
-);
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Accueil')),
-      body: const Center(child: Text('Page d\'accueil')),
-    );
-  }
-}
-
-class ScannerScreen extends StatelessWidget {
-  const ScannerScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Scanner')),
-      body: const Center(child: Text('Page scanner')),
+      home: LoginScreen(),
     );
   }
 }
